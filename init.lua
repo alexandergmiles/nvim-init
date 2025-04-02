@@ -12,18 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Have tabs be two spaces wide which IMO just looks nicer
--- vim.opt.tabstop = 8
--- vim.opt.softtabstop = 2
--- vim.opt.shiftwidth = 2
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
-Options = {
-  opt = {
-    showmode = true,
-    tabstop = 8,
-    softtabstop = 2,
-    shiftwidth = 2,
-  },
-}
+-- Line numbers
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 require("lazy").setup({
   "folke/which-key.nvim",
