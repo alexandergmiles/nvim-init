@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Have tabs be two spaces wide which IMO just looks nicer
-vim.opt.tabstop = 8
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
@@ -61,6 +61,22 @@ end)
 
 local cmp = require("cmp")
 
+cmp.setup({
+  mapping = {
+	["<C-Enter>"] = cmp.mapping(function(fallback)
+	  if cmp.visible() then
+		local entry = cmp.get_selected_entry()
+		if not entry then
+		  cmp.select_next_item({ behaviour = cmp.SelectBehaviour.Select })
+		end
+		cmp.confirm()
+	  else
+		fallback()
+	  end
+	end, {"i", "s", "c"}),
+  },
+})
+
 require("lspconfig").lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -85,7 +101,21 @@ require("lspconfig").lua_ls.setup {
   }
 }
 
-require("lspconfig").gopls.setup{}
+require("lspconfig").gopls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod"},
+  settings = {
+	gopls = {
+	  completeUnimported = true,
+	  usePlaceholders = true,
+	  analyses = {
+		unusedparams = true,
+	  },
+	},
+  },
+}
 
 -- Ctrl+[ to escape insert mode
 vim.keymap.set("i", "<C-[>", "<Esc>")
@@ -130,3 +160,19 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 vim.wo.number = true
+
+local job_id = 0
+-- Fun new terminal
+vim.keymap.set("n", "<space>st", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 15)
+  job_id = vim.bo.channel
+end)
+
+vim.keymap.set("n", "<space>build", function()
+  vim.fn.chansend(job_id, { "clear\r\n" })
+end)
+
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
