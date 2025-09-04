@@ -35,7 +35,8 @@ require("lazy").setup({
   { "rose-pine/neovim", name = "rose-pine" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
 })
 
 -- Mason config
@@ -119,6 +120,8 @@ require("lspconfig").gopls.setup{
   },
 }
 
+require("toggleterm").setup{}
+
 -- Ctrl+[ to escape insert mode
 vim.keymap.set("i", "<C-[>", "<Esc>")
 
@@ -145,7 +148,7 @@ require("telescope").setup({
 
 -- Treesitter lets gooo
 require("nvim-treesitter.configs").setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go" },
+  ensure_installed = { "python", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go" },
   auto_install = true,
   highlight = {
     enabled = true,
@@ -178,3 +181,8 @@ vim.keymap.set("n", "<space>build", function()
 end)
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
+vim.keymap.set("n", "<C-w><Up>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-w><Down>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-w><Left>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-w><Right>", "<C-w><C-l>")
