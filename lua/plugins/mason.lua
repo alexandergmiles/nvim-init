@@ -10,8 +10,4 @@ return {
 	  }
 	}
   },
-  {
-	"mason-org/mason-lspconfig.nvim",
-	version = "v2.1.0",
-  },
 }
