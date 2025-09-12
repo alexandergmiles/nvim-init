@@ -4,10 +4,6 @@ vim.g.mapleader = " "
 require("autocmds")
 require("config.lazy")
 
-require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "gopls" }
-})
-
 vim.cmd("colorscheme rose-pine")
 
 vim.opt.tabstop = 4
