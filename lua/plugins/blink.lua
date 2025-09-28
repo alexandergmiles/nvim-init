@@ -28,6 +28,9 @@ return {
 	  },
 	  fuzzy = { implementation = "prefer_rust_with_warning" }
 	},
-	opts_extend = { "sources.default" }
+	opts_extend = { "sources.default" },
+	keymap = {
+	  ["<C-Enter>"] = { "select_and_accept" }, 
+	}
   },
 }

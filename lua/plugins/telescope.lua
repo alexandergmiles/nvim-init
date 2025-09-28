@@ -14,7 +14,9 @@ return {
 			theme = "dropdown"
 		  },
 		},
+		hijack_netrw = false,
 	  })
+
 	end,
   }
 }
