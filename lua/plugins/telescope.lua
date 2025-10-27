@@ -11,7 +11,8 @@ return {
 	  telescope.setup({
 		pickers = {
 		  find_files = {
-			theme = "dropdown"
+			theme = "dropdown",
+			hidden = true
 		  },
 		},
 		hijack_netrw = false,
