@@ -101,6 +101,9 @@ return {
 	  completeUnimported = true,
 	  usePlaceholders = true,
 	  gofumpt = true,
+	  analyses = {
+		fillstruct = true,
+	  },
 	},
   },
 }

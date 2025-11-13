@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 
 -- Load up anything we need to
 local builtin = require("telescope.builtin")
+local dap = require("dap")
+local dapui = require("dapui")
 
 -- Moving through windows
 vim.keymap.set("n", "<C-w><Up>", "<C-w><C-k>")
@@ -18,3 +20,8 @@ vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>")
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
+
+-- nvim-dap
+vim.keymap.set("n", "<leader>dc", dap.continue, {})
+vim.keymap.set("n", "<leader>du", dapui.toggle, {})
+vim.keymap.set("n", "<leader>de", dapui.eval, {})
