@@ -17,4 +17,3 @@ vim.wo.relativenumber = true
 
 vim.lsp.enable("gopls")
 vim.lsp.enable("terraform_lsp")
-vim.lsp.enable("roslyn")
