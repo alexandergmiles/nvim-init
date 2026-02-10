@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 local builtin = require("telescope.builtin")
 local dap = require("dap")
 local dapui = require("dapui")
+local _99 = require("99")
 
 -- Moving through windows
 vim.keymap.set("n", "<C-w><Up>", "<C-w><C-k>")
@@ -25,3 +26,17 @@ vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
 vim.keymap.set("n", "<leader>dc", dap.continue, {})
 vim.keymap.set("n", "<leader>du", dapui.toggle, {})
 vim.keymap.set("n", "<leader>de", dapui.eval, {})
+
+-- 99
+vim.keymap.set("n", "<leader>9f", function() 
+	_99.fill_in_function()
+end)
+vim.keymap.set("v", "<leader>9v", function()
+	_99.visual()
+end)
+vim.keymap.set("v", "<leader>9s", function()
+	_99.stop_all_requests()
+end)
+vim.keymap.set("n", "<leader>9fd", function()
+	_99.fill_in_function()
+end)
