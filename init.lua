@@ -1,7 +1,6 @@
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 
-require("autocmds")
 require("config.lazy")
 require("config.keymaps")
 
@@ -17,3 +16,5 @@ vim.wo.relativenumber = true
 
 vim.lsp.enable("gopls")
 vim.lsp.enable("terraform_lsp")
+vim.lsp.enable("pyright")
+vim.lsp.enable("eslint")

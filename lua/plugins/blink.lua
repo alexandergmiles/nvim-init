@@ -13,7 +13,7 @@ return {
 		  auto_show = true,
 		},
 		ghost_text = {
-		  enabled = true
+		  enabled = false,
 		},
 	  },
 	  sources = {
