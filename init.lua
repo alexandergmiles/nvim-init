@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 require("config.lazy")
 require("config.keymaps")
 
+require("conform")
+
 vim.cmd("colorscheme rose-pine")
 
 vim.opt.tabstop = 4
@@ -14,7 +16,8 @@ vim.opt.shiftwidth = 2
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- LSPs
 vim.lsp.enable("gopls")
 vim.lsp.enable("terraform_lsp")
-vim.lsp.enable("pyright")
-vim.lsp.enable("eslint")
+vim.lsp.enable("ruff")
+vim.lsp.enable("biome")

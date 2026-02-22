@@ -8,7 +8,7 @@ return {
 	  
 	  ninenine.setup({
 		provider = ninenine.OpenCodeProvider,
-		model = "opencode/kimi-k2.5-free",
+		model = "ollama/qwen3:8b",
 
 		logger = {
 		  level = ninenine.DEBUG,
