@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
 
 -- 99
-vim.keymap.set("n", "<leader>9f", function() 
+vim.keymap.set("n", "<leader>9f", function()
 	_99.fill_in_function()
 end)
 vim.keymap.set("v", "<leader>9v", function()
@@ -34,11 +34,10 @@ vim.keymap.set("n", "<leader>9fd", function()
 end)
 
 -- LSP keybinds
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0})
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
 vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = 0 })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
-

@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 
 require("config.lazy")
 require("config.keymaps")
-
 require("conform")
 
 vim.cmd("colorscheme rose-pine")
