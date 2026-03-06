@@ -1,6 +1,12 @@
 return {
 	{
 		"ThePrimeagen/99",
+		dependencies = {
+			{
+				"saghen/blink.compat",
+				version = "2.*",
+			},
+		},
 		config = function()
 			local ninenine = require("99")
 			local cwd = vim.uv.cwd()
@@ -17,7 +23,7 @@ return {
 				},
 
 				completion = {
-					source = "cmp",
+					source = "blink",
 				},
 
 				md_files = {

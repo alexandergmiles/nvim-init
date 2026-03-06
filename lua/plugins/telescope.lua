@@ -1,23 +1,23 @@
 return {
-  {
-	"nvim-telescope/telescope.nvim", 
-	tag = "0.1.6",
-	dependencies = {
-	  "nvim-lua/plenary.nvim"
-	},
-	config = function()
-	  local telescope = require("telescope")
-
-	  telescope.setup({
-		pickers = {
-		  find_files = {
-			theme = "dropdown",
-			hidden = true
-		  },
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		tag = "v0.2.1",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
 		},
-		hijack_netrw = false,
-	  })
+		config = function()
+			local telescope = require("telescope")
 
-	end,
-  }
+			telescope.setup({
+				pickers = {
+					find_files = {
+						theme = "dropdown",
+						hidden = true,
+					},
+				},
+				hijack_netrw = false,
+			})
+		end,
+	},
 }
