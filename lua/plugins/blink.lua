@@ -39,7 +39,6 @@ return {
 				},
 				ghost_text = {
 					enabled = true,
-					auto_insert = false,
 				},
 			},
 			sources = {

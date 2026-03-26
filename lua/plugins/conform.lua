@@ -10,6 +10,7 @@ return {
 					python = { "ruff" },
 					go = { "gofumpt" },
 					terraform = { "terraform_fmt" },
+					markdown = { "mardownfmt" },
 				},
 				log_level = vim.log.levels.INFO,
 				format_on_save = {

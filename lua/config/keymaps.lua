@@ -41,3 +41,4 @@ vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = 0 })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {})

@@ -6,7 +6,7 @@ return {
 
 			nvimlint.linters_by_ft = {
 				terraform = { "tflint" },
-				go = { "golangci-lint" },
+				go = { "golangcilint" },
 			}
 		end,
 	},

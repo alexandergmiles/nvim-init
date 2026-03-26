@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 require("config.lazy")
 require("config.keymaps")
+require("config.autocmds")
 require("conform")
 
 vim.cmd("colorscheme rose-pine")
@@ -21,23 +22,4 @@ vim.lsp.enable("ruff")
 vim.lsp.enable("biome")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("terraformls")
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.go",
-	callback = function()
-		vim.lsp.buf.code_action({
-			context = {
-				only = { "source.organizeImports" },
-			},
-			apply = true,
-		})
-	end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*",
-	callback = function()
-		local linter = require("lint")
-		linter.try_lint()
-	end,
-})
+vim.lsp.enable("ts_ls")
