@@ -24,8 +24,16 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("terraformls")
 vim.lsp.enable("ts_ls")
 
+function FoldText()
+	return "It's a fold, bitch!"
+end
+
 --- folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
+vim.opt.foldtext = ""
+vim.opt.fillchars = {
+	fold = " ",
+}
